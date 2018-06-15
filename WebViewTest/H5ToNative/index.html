@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/horoyapp.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var i = 0;
+        function testCallBack() {
+            var result = { "name": i };
+			//原生回调函数
+            hryapp.execCallBack(i, result);
+        }
+        function testOnClick() {
+            hryapp.horoyhome.getUserInfo("123", function (data) {
+                alert("call back..." + data.name);
+            });
+        }
+    </script>
+    
+</head>
+<body>
+    <div>
+        <input type="button" value="测试js是否加载" onclick="testAlert()" />
+        <input type="button" value="测试调用" onclick="testOnClick()" />
+        <input type="button" value="测试回调" onclick="testCallBack()" />
+    </div>
+</body>
+</html>

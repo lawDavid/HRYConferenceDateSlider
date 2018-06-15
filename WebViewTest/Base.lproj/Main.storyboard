@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JT7-UT-NHy">
+                                <rect key="frame" x="155" y="267" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="WebView"/>
+                                <connections>
+                                    <segue destination="rAT-lW-3b2" kind="show" id="jzv-OZ-b1s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRH-n3-kPh">
+                                <rect key="frame" x="142" y="347" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="HomeProject"/>
+                                <connections>
+                                    <segue destination="KGJ-0m-Ng8" kind="show" id="mTd-gY-FUm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQR-NX-Fpc">
+                                <rect key="frame" x="167" y="425" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Slider"/>
+                                <connections>
+                                    <segue destination="Y8u-b4-Ze6" kind="show" id="Htc-sm-C2L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="hAU-LL-7kA">
+            <objects>
+                <viewController id="rAT-lW-3b2" customClass="OSWebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LtE-77-g4z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Wwq-hQ-9Gx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7r-5Q-Bqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1759" y="-279"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qly-Bq-Uj6">
+            <objects>
+                <viewController id="KGJ-0m-Ng8" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3CW-kM-Nmd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1y-lb-3du" customClass="HRYHomeProjectView">
+                                <rect key="frame" x="0.0" y="278.5" width="375" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="JAr-f8-VbA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u1y-lb-3du" firstAttribute="trailing" secondItem="D3g-tC-xQc" secondAttribute="trailing" id="EHU-6k-Ch8"/>
+                            <constraint firstItem="u1y-lb-3du" firstAttribute="leading" secondItem="D3g-tC-xQc" secondAttribute="leading" id="XYU-MQ-Fnj"/>
+                            <constraint firstItem="u1y-lb-3du" firstAttribute="centerY" secondItem="D3g-tC-xQc" secondAttribute="centerY" id="dCh-Lx-pta"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D3g-tC-xQc"/>
+                    </view>
+                    <connections>
+                        <outlet property="projectView" destination="u1y-lb-3du" id="A51-UU-UtR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYb-Ia-GdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="466"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CuC-yF-Zsm">
+            <objects>
+                <viewController id="Y8u-b4-Ze6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Ke-n8-71b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4n-cm-coV" customClass="HRYConferenceDateSlider">
+                                <rect key="frame" x="16" y="315.5" width="343" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Fkb-Zx-jqu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g4n-cm-coV" firstAttribute="leading" secondItem="OdR-lc-Zbo" secondAttribute="leading" constant="16" id="ivr-We-IbY"/>
+                            <constraint firstItem="OdR-lc-Zbo" firstAttribute="trailing" secondItem="g4n-cm-coV" secondAttribute="trailing" constant="16" id="kKD-Wd-fHn"/>
+                            <constraint firstItem="g4n-cm-coV" firstAttribute="centerY" secondItem="OdR-lc-Zbo" secondAttribute="centerY" id="ws4-bp-giw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OdR-lc-Zbo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAf-G5-Y7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757.5999999999999" y="1201.3493253373315"/>
+        </scene>
+    </scenes>
+</document>
