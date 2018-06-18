@@ -11,6 +11,7 @@
 @interface HRYConferencePointView ()
 
 @property (nonatomic, assign) CGPoint originLocation;
+@property (nonatomic, assign) CGPoint lastLocataion;
 
 @end
 
@@ -41,16 +42,28 @@
 - (void)panAction:(UIPanGestureRecognizer *)pan {
     if (pan.state == UIGestureRecognizerStateBegan) {
         _originLocation = self.center;
+        _lastLocataion = self.center;
     }
     else if (pan.state == UIGestureRecognizerStateCancelled) {
-        NSLog(@"UIGestureRecognizerStateCancelled");
+        _originLocation = _lastLocataion;
+        self.center = _lastLocataion;
     }
     else if (pan.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"UIGestureRecognizerStateEnded");
+        if (_pointDidMoveBlock) {
+            if (_pointDidMoveBlock(self.center.x)) {
+                _lastLocataion = self.center;
+            }
+            else {
+                _originLocation = _lastLocataion;
+                self.center = _lastLocataion;
+            }
+        }
     }
     else {
         CGPoint translation = [pan translationInView:self.superview];
-        self.center = CGPointMake(_originLocation.x + translation.x, _originLocation.y);
+        if (_originLocation.x + translation.x > 0 && _originLocation.x + translation.x < self.superview.bounds.size.width) {
+            self.center = CGPointMake(_originLocation.x + translation.x, _originLocation.y);
+        }
     }
 }
 

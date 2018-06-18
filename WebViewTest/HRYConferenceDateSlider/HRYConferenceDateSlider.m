@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet HRYConferencePointView *startPoint;
-
+@property (weak, nonatomic) IBOutlet HRYConferencePointView *endPoint;
 @property (weak, nonatomic) IBOutlet HRYConferenceDrawView *drawView;
 
 @end
@@ -74,6 +74,10 @@
     _drawView.disableDurations = disableRadios;
     
     _drawView.inset = UIEdgeInsetsMake(30, 1, 28, 1);
+    
+    _startPoint.pointDidMoveBlock = ^BOOL(CGFloat centerX) {
+        return NO;
+    };
 
 }
 
