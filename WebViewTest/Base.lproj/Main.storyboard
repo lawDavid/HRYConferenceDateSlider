@@ -97,19 +97,19 @@
             </objects>
             <point key="canvasLocation" x="1758" y="466"/>
         </scene>
-        <!--View Controller-->
+        <!--Conference Date View Controller-->
         <scene sceneID="CuC-yF-Zsm">
             <objects>
-                <viewController id="Y8u-b4-Ze6" sceneMemberID="viewController">
+                <viewController id="Y8u-b4-Ze6" customClass="HRYConferenceDateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Ke-n8-71b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4n-cm-coV" customClass="HRYConferenceDateSlider">
-                                <rect key="frame" x="16" y="315.5" width="343" height="56"/>
+                                <rect key="frame" x="16" y="295.5" width="343" height="96"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="Fkb-Zx-jqu"/>
+                                    <constraint firstAttribute="height" constant="96" id="Fkb-Zx-jqu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -121,6 +121,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OdR-lc-Zbo"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderView" destination="g4n-cm-coV" id="kKR-U7-tWO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAf-G5-Y7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

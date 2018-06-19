@@ -33,7 +33,7 @@
     return self;
 }
 
-- (void)commonInit {
+- (void)commonInit {    
     self.userInteractionEnabled = YES;
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
     [self addGestureRecognizer:pan];
@@ -47,15 +47,22 @@
     else if (pan.state == UIGestureRecognizerStateCancelled) {
         _originLocation = _lastLocataion;
         self.center = _lastLocataion;
+        // moving block
+        !_pointDidMoveBlock ? : _pointDidMoveBlock(self.ratio);
     }
     else if (pan.state == UIGestureRecognizerStateEnded) {
-        if (_pointDidMoveBlock) {
-            if (_pointDidMoveBlock(self.center.x)) {
+        // end block
+        if (_pointDidEndMoveBlock) {
+            if (_pointDidEndMoveBlock(self.ratio)) {
                 _lastLocataion = self.center;
+                // moving block
+                !_pointDidMoveBlock ? : _pointDidMoveBlock(self.ratio);
             }
             else {
                 _originLocation = _lastLocataion;
                 self.center = _lastLocataion;
+                // moving block
+                !_pointDidMoveBlock ? : _pointDidMoveBlock(self.ratio);
             }
         }
     }
@@ -63,8 +70,20 @@
         CGPoint translation = [pan translationInView:self.superview];
         if (_originLocation.x + translation.x > 0 && _originLocation.x + translation.x < self.superview.bounds.size.width) {
             self.center = CGPointMake(_originLocation.x + translation.x, _originLocation.y);
+            // moving block
+            !_pointDidMoveBlock ? : _pointDidMoveBlock(self.ratio);
         }
     }
+}
+
+- (void)setRatio:(CGFloat)ratio {
+    CGFloat centerX = ratio * self.superview.bounds.size.width;
+    self.center = CGPointMake(centerX, self.center.y);
+}
+
+- (CGFloat)ratio {
+    CGFloat ratio = self.center.x / self.superview.bounds.size.width;
+    return ratio;
 }
 
 @end

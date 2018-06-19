@@ -10,12 +10,16 @@
 
 @interface HRYConferenceDateSlider : UIView
 
-@property (nonatomic, assign) NSInteger startTime;
-@property (nonatomic, assign) NSInteger endTime;
+@property (nonatomic, copy) NSString *startTime;
+@property (nonatomic, copy) NSString *endTime;
 
-@property (nonatomic, assign) NSInteger selectedBegin;
-@property (nonatomic, assign) NSInteger selectedEnd;
+@property (nonatomic, copy) NSString *selectedBegin;
+@property (nonatomic, copy) NSString *selectedEnd;
 
 @property (nonatomic, strong) NSArray *disableDurations;
+
+@property (nonatomic, strong) NSArray<NSString*> *titles;
+
+- (void)setView;
 
 @end

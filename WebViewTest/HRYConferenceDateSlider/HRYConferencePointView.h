@@ -10,6 +10,9 @@
 
 @interface HRYConferencePointView : UIImageView
 
-@property (nonatomic, copy) BOOL(^pointDidMoveBlock)(CGFloat centerX);
+@property (nonatomic, copy) BOOL(^pointDidEndMoveBlock)(CGFloat ratio);
+@property (nonatomic, copy) void(^pointDidMoveBlock)(CGFloat ratio);
+
+@property (nonatomic, assign) CGFloat ratio;
 
 @end

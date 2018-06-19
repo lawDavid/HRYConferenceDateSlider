@@ -38,6 +38,9 @@
 		71DD7C8E20D3D1AE00D3243D /* startPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71DD7C8A20D3D1AE00D3243D /* startPoint@2x.png */; };
 		71DD7C8F20D3D1AE00D3243D /* startPoint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71DD7C8B20D3D1AE00D3243D /* startPoint@3x.png */; };
 		71DD7C9020D3D1AE00D3243D /* endPoint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71DD7C8C20D3D1AE00D3243D /* endPoint@2x.png */; };
+		71EC814320D8B650007DEE04 /* HRYConferenceDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC814220D8B650007DEE04 /* HRYConferenceDateViewController.m */; };
+		71EC814620D8F172007DEE04 /* popView@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71EC814420D8F171007DEE04 /* popView@3x.png */; };
+		71EC814720D8F172007DEE04 /* popView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71EC814520D8F171007DEE04 /* popView@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +99,10 @@
 		71DD7C8A20D3D1AE00D3243D /* startPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startPoint@2x.png"; sourceTree = "<group>"; };
 		71DD7C8B20D3D1AE00D3243D /* startPoint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startPoint@3x.png"; sourceTree = "<group>"; };
 		71DD7C8C20D3D1AE00D3243D /* endPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "endPoint@2x.png"; sourceTree = "<group>"; };
+		71EC814120D8B650007DEE04 /* HRYConferenceDateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRYConferenceDateViewController.h; sourceTree = "<group>"; };
+		71EC814220D8B650007DEE04 /* HRYConferenceDateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRYConferenceDateViewController.m; sourceTree = "<group>"; };
+		71EC814420D8F171007DEE04 /* popView@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popView@3x.png"; sourceTree = "<group>"; };
+		71EC814520D8F171007DEE04 /* popView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popView@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +144,8 @@
 				719B31C020D28F4300674C67 /* AppDelegate.m */,
 				719B31C220D28F4300674C67 /* ViewController.h */,
 				719B31C320D28F4300674C67 /* ViewController.m */,
+				71EC814120D8B650007DEE04 /* HRYConferenceDateViewController.h */,
+				71EC814220D8B650007DEE04 /* HRYConferenceDateViewController.m */,
 				719B31C520D28F4300674C67 /* Main.storyboard */,
 				719B31C820D28F4400674C67 /* Assets.xcassets */,
 				719B31D820D28FAB00674C67 /* Masonry */,
@@ -226,6 +235,8 @@
 		71DD7C9120D3D1DB00D3243D /* image */ = {
 			isa = PBXGroup;
 			children = (
+				71EC814520D8F171007DEE04 /* popView@2x.png */,
+				71EC814420D8F171007DEE04 /* popView@3x.png */,
 				71DD7C8A20D3D1AE00D3243D /* startPoint@2x.png */,
 				71DD7C8B20D3D1AE00D3243D /* startPoint@3x.png */,
 				71DD7C8C20D3D1AE00D3243D /* endPoint@2x.png */,
@@ -292,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				71DD7C8F20D3D1AE00D3243D /* startPoint@3x.png in Resources */,
+				71EC814620D8F172007DEE04 /* popView@3x.png in Resources */,
+				71EC814720D8F172007DEE04 /* popView@2x.png in Resources */,
 				719B31CC20D28F4400674C67 /* LaunchScreen.storyboard in Resources */,
 				719B31C920D28F4400674C67 /* Assets.xcassets in Resources */,
 				719B320020D28FAB00674C67 /* README.md in Resources */,
@@ -314,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EC814320D8B650007DEE04 /* HRYConferenceDateViewController.m in Sources */,
 				71DD7C7E20D3995600D3243D /* HRYConferenceDrawView.m in Sources */,
 				719B321520D34C5100674C67 /* HRYHomeProjectView.m in Sources */,
 				71DD7C8820D3C81C00D3243D /* HRYConferenceDateSlider.m in Sources */,

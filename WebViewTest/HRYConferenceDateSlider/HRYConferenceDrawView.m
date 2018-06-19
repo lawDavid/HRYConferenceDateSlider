@@ -14,31 +14,6 @@
 
 @implementation HRYConferenceDrawView : UIView
 
-/*
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}ds
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}
-
-- (void)commonInit {
-    [[NSBundle mainBundle] loadNibNamed:@"HRYConferenceDateSlider" owner:self options:nil];
-    [self addSubview:_contentView];
-    _contentView.frame = self.bounds;
-    _contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-}
-*/
-
 - (void)drawRect:(CGRect)rect {
     
     CGFloat lineWidth = 2;
@@ -56,12 +31,11 @@
     [lineColor setStroke];
     [linePatch stroke];
     
-    NSInteger scaleCount = _totalCount / 4;         //两小时一段
-    CGFloat unitWidth = availableWidth / scaleCount;     //一段的长度
+    CGFloat unitWidth = availableWidth / _scaleCount;     //一段的长度
 
-    // scale
+    // x axle scale & x axle title
     UIBezierPath *scalePath = [[UIBezierPath alloc] init];
-    for (NSInteger idx = 0; idx <= scaleCount; idx ++) {
+    for (NSInteger idx = 0; idx <= _scaleCount; idx ++) {
         CGPoint startPoint = CGPointMake(startPointX + idx * unitWidth, lineY);
         CGPoint endPoint = CGPointMake(startPointX + idx * unitWidth, lineY - 8);
         [scalePath moveToPoint:startPoint];
@@ -71,7 +45,7 @@
     [lineColor setStroke];
     [scalePath stroke];
 
-    //selected line
+    // selected line
     UIBezierPath *selectedPatch = [[UIBezierPath alloc] init];
     CGFloat selectedStartPointX = startPointX + availableWidth * _selectedBegin;
     CGFloat selectedEndPointX = startPointX + availableWidth * _selectedEnd;
@@ -98,7 +72,16 @@
     UIColor *disableColor = [UIColor colorWithRed:74/255.0 green:144/255.0 blue:226/255.0 alpha:1];
     [disableColor setStroke];
     [disablePatch stroke];
-    
+}
+
+- (void)setSelectedBegin:(CGFloat)selectedBegin {
+    _selectedBegin = selectedBegin;
+    [self setNeedsDisplay];
+}
+
+- (void)setSelectedEnd:(CGFloat)selectedEnd {
+    _selectedEnd = selectedEnd;
+    [self setNeedsDisplay];
 }
 
 @end

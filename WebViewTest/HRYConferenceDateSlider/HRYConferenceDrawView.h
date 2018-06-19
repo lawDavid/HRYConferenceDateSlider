@@ -12,7 +12,7 @@
 
 @property (nonatomic, assign) UIEdgeInsets inset;
 
-@property (nonatomic, assign) NSInteger totalCount;         //总共时间段 30min一段
+@property (nonatomic, assign) NSInteger scaleCount;         //总共时间段 30min一段
 
 @property (nonatomic, assign) CGFloat selectedBegin;        //位置百分比
 @property (nonatomic, assign) CGFloat selectedEnd;          //位置百分比
